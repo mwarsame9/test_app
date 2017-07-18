@@ -12,4 +12,12 @@ describe "get all quotes route", :type => :request do
   it 'returns status code 200' do
     expect(response).to have_http_status(:success)
   end
+
+  it 'returns status code 422 when record is not found' do
+    expect(response).to have_http_status(:not_found)
+  end
+
+  # context 'when not valid' do
+  #   it { is_expected.to respond_with 422 }
+  # end
 end
